@@ -155,8 +155,8 @@
       padding-top: 15px; 
       /* Completely transparent with heavy blur (Pure Glass) */
       background: transparent; 
-      backdrop-filter: blur(35px) saturate(150%);
-      -webkit-backdrop-filter: blur(35px) saturate(150%);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 10px 40px rgba(0,0,0,0.05);
       
@@ -4510,6 +4510,16 @@
         min-height: 280px !important;
       }
     }
+
+    /* ===== PERFORMANCE: lighter effects on phones/tablets (smoother scrolling) ===== */
+    @media (max-width: 900px), (hover: none) {
+      .bg-blob { animation: none; }
+      .navbar { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+      .floating-tool-logo { will-change: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bg-blob { animation: none; }
+    }
   </style>
   </head>
 <body>
@@ -4626,7 +4636,7 @@
     </div>
     
     <div class="hero-portrait-wrapper">
-      <img src="my_image_nobg.png" onerror="this.onerror=null; this.src='my image.jpeg';" alt="Khalid Mahmud Joy" class="portrait-img" />
+      <img src="my_image_nobg.webp" onerror="this.onerror=null; this.src='my image.jpeg';" alt="Khalid Mahmud Joy" class="portrait-img" fetchpriority="high" decoding="async" />
       <div class="portrait-gradient-fade"></div>
     </div>
     
@@ -4697,10 +4707,10 @@
 
       <div class="exp-interactive-list">
         
-        <div class="exp-list-row reveal stagger-1" data-img="experience/amabalaIT logo.png">
+        <div class="exp-list-row reveal stagger-1" data-img="experience/amabalaIT logo.webp">
           <div class="exp-row-left">
             <span class="exp-row-num">01 // PROFESSIONAL</span>
-            <h3 class="exp-row-title">Analyst, Business Dev.</h3>
+            <h3 class="exp-row-title">Software Developer</h3>
           </div>
           <div class="exp-row-right">
             <div class="exp-row-company">Ambala IT &mdash; Dhaka</div>
@@ -4709,7 +4719,7 @@
           <div class="exp-row-hover-bg"></div>
         </div>
 
-        <div class="exp-list-row reveal stagger-2" data-img="experience/EWUCoPC.jpg">
+        <div class="exp-list-row reveal stagger-2" data-img="experience/EWUCoPC.webp">
           <div class="exp-row-left">
             <span class="exp-row-num">02 // LEADERSHIP</span>
             <h3 class="exp-row-title">Assistant General Sec.</h3>
@@ -4721,7 +4731,7 @@
           <div class="exp-row-hover-bg"></div>
         </div>
 
-        <div class="exp-list-row reveal stagger-3" data-img="experience/caretutors.jpg">
+        <div class="exp-list-row reveal stagger-3" data-img="experience/caretutors.webp">
           <div class="exp-row-left">
             <span class="exp-row-num">03 // EXTRACURRICULAR</span>
             <h3 class="exp-row-title">Campus Ambassador</h3>
@@ -4745,44 +4755,44 @@
         <div class="huge-text-container" id="hugeTextTitle"></div>
         <div class="tech-icons-container">
           <!-- Languages -->
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" title="C" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" title="Dart" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" title="C" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" title="Dart" />
           
           <!-- Web & Mobile -->
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" title="Next.js" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" title="Express" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" title="FastAPI" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" title="Tailwind" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" title="Next.js" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" title="Node.js" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" title="Express" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" title="FastAPI" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" title="Flutter" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" title="Tailwind" />
           
           <!-- AI & Data -->
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" />
           
           <!-- Tools & Cloud -->
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" title="Firebase" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" title="GitHub" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg" alt="DigitalOcean" title="DigitalOcean" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" title="Postman" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" title="Slack" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" title="MongoDB" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" title="Firebase" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" title="MySQL" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" title="GitHub" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg" alt="DigitalOcean" title="DigitalOcean" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" title="Postman" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg" alt="Slack" title="Slack" />
           
           <!-- Design & Video -->
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" title="Figma" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="Photoshop" title="Photoshop" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator" title="Illustrator" />
-          <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro" title="Premiere Pro" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" title="Figma" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" alt="Photoshop" title="Photoshop" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator" title="Illustrator" />
+          <img loading="lazy" decoding="async" class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" alt="Premiere Pro" title="Premiere Pro" />
         </div>
       </div>
     </div>
@@ -4809,7 +4819,7 @@
         
         <!-- Brand Bangladesh -->
         <div class="bento-card reveal-bento" data-category="Web">
-          <img src="project poster/Brand Bangladesh.jpg" class="bento-poster-img" alt="Brand Bangladesh">
+          <img loading="lazy" decoding="async" src="project poster/Brand Bangladesh.webp" class="bento-poster-img" alt="Brand Bangladesh">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4817,13 +4827,13 @@
             <h3 class="bento-title">Brand Bangladesh</h3>
             <p class="bento-desc">Immersive nation-branding website with 450vh pinned scroll engine and 3D UI.</p>
             <div class="bento-tech"><span>Next.js 14</span><span>GSAP</span><span>Tailwind</span></div>
-            <a href="http://brand-bangladesh.vercel.app/" target="_blank" class="bento-link"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="https://demo-brand-bangladesh.vercel.app/" target="_blank" rel="noopener noreferrer" class="bento-link"><i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
         <!-- FAMS (Fixed Asset & Inventory Management) -->
         <div class="bento-card reveal-bento" data-category="Full Stack">
-          <img src="project poster/FAMS.jfif" class="bento-poster-img" alt="FAMS &mdash; Fixed Asset &amp; Inventory Management">
+          <img loading="lazy" decoding="async" src="project poster/FAMS.webp" class="bento-poster-img" alt="FAMS &mdash; Fixed Asset &amp; Inventory Management">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4837,7 +4847,7 @@
 
         <!-- Sonara Music -->
         <div class="bento-card reveal-bento" data-category="Full Stack">
-          <img src="project poster/Sonara Music.png" class="bento-poster-img" alt="Sonara Music">
+          <img loading="lazy" decoding="async" src="project poster/Sonara Music.webp" class="bento-poster-img" alt="Sonara Music">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4851,7 +4861,7 @@
 
         <!-- KeepTrack -->
         <div class="bento-card reveal-bento" data-category="Mobile">
-          <img src="project poster/keeptrack.jpg" class="bento-poster-img" alt="KeepTrack App">
+          <img loading="lazy" decoding="async" src="project poster/keeptrack.webp" class="bento-poster-img" alt="KeepTrack App">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4865,7 +4875,7 @@
 
         <!-- IPITCM -->
         <div class="bento-card reveal-bento" data-category="Full Stack">
-          <img src="project poster/IPICTM.jpg" class="bento-poster-img" alt="IPITCM">
+          <img loading="lazy" decoding="async" src="project poster/IPICTM.webp" class="bento-poster-img" alt="IPITCM">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4879,7 +4889,7 @@
         
         <!-- Doctor Desk -->
         <div class="bento-card reveal-bento" data-category="Networking">
-          <img src="project poster/Doctor Desk.jpg" class="bento-poster-img" alt="Doctor Desk">
+          <img loading="lazy" decoding="async" src="project poster/Doctor Desk.webp" class="bento-poster-img" alt="Doctor Desk">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4893,7 +4903,7 @@
         
         <!-- BanglaMind AI -->
         <div class="bento-card reveal-bento" data-category="Full Stack">
-          <img src="project poster/BanglamindAI.jpg" class="bento-poster-img" alt="BanglaMind AI">
+          <img loading="lazy" decoding="async" src="project poster/BanglamindAI.webp" class="bento-poster-img" alt="BanglaMind AI">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4907,7 +4917,7 @@
         
         <!-- FAISS Benchmark -->
         <div class="bento-card reveal-bento" data-category="AI/ML">
-          <img src="project poster/fIASS.png" class="bento-poster-img" alt="FAISS Benchmark">
+          <img loading="lazy" decoding="async" src="project poster/fIASS.webp" class="bento-poster-img" alt="FAISS Benchmark">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4921,7 +4931,7 @@
 
         <!-- IoT Dashboard -->
         <div class="bento-card reveal-bento" data-category="Full Stack">
-          <img src="project poster/IOT dashboard.jpg" class="bento-poster-img" alt="IoT Dashboard">
+          <img loading="lazy" decoding="async" src="project poster/IOT dashboard.webp" class="bento-poster-img" alt="IoT Dashboard">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -4935,7 +4945,7 @@
         
         <!-- CNG Detection -->
         <div class="bento-card reveal-bento" data-category="AI/ML">
-          <img src="project poster/CNG Detection.jpg" class="bento-poster-img" alt="CNG Detection">
+          <img loading="lazy" decoding="async" src="project poster/CNG Detection.webp" class="bento-poster-img" alt="CNG Detection">
           <div class="scanner-line"></div>
           <div class="bento-bg"></div>
           <div class="bento-content">
@@ -5009,7 +5019,7 @@
             <!-- Innovative Micro-Figure Glass Capsule -->
             <div class="kr-figure-preview" onclick="openResearchModal('mri')" title="Click to inspect research figure">
               <div class="kr-figure-media">
-                <img src="paper/MRI.webp" alt="Brain MRI Object Detection" />
+                <img loading="lazy" decoding="async" src="paper/MRI.webp" alt="Brain MRI Object Detection" />
                 <div class="kr-figure-overlay">
                   <span class="kr-fig-tag">FIG. 01</span>
                   <span class="kr-zoom-icon"><i class="fa-solid fa-expand"></i></span>
@@ -5031,7 +5041,7 @@
         </div>
 
         <!-- Research 02: TEALD-X Temporal Face Detect -->
-        <div class="kinetic-row" data-img="paper/face detection.jpg" data-fig="FIG. 02 // CCTV FUSION">
+        <div class="kinetic-row" data-img="paper/face detection.webp" data-fig="FIG. 02 // CCTV FUSION">
           <div class="kr-left">
             <span class="kr-num">02</span>
             <h3 class="kr-title">TEALD-X Temporal Face Detect</h3>
@@ -5040,7 +5050,7 @@
             <!-- Innovative Micro-Figure Glass Capsule -->
             <div class="kr-figure-preview" onclick="openResearchModal('face')" title="Click to inspect research figure">
               <div class="kr-figure-media">
-                <img src="paper/face detection.jpg" alt="TEALD-X Temporal Face Detect" />
+                <img loading="lazy" decoding="async" src="paper/face detection.webp" alt="TEALD-X Temporal Face Detect" />
                 <div class="kr-figure-overlay">
                   <span class="kr-fig-tag">FIG. 02</span>
                   <span class="kr-zoom-icon"><i class="fa-solid fa-expand"></i></span>
@@ -5119,7 +5129,7 @@
               <span class="see-more">2022 — 2026</span>
             </div>
             <div class="logo-box">
-              <img src="education/East West.png" alt="East West">
+              <img loading="lazy" decoding="async" src="education/East West.webp" alt="East West">
             </div>
           </div>
         </div>
@@ -5135,7 +5145,7 @@
               <span class="see-more">2018 — 2020</span>
             </div>
             <div class="logo-box">
-              <img src="education/Rajuk.webp" alt="Rajuk">
+              <img loading="lazy" decoding="async" src="education/Rajuk.webp" alt="Rajuk">
             </div>
           </div>
         </div>
@@ -5152,7 +5162,7 @@
               <span class="see-more">2016 — 2018</span>
             </div>
             <div class="logo-box">
-              <img src="education/ideal.png" alt="Ideal">
+              <img loading="lazy" decoding="async" src="education/ideal.webp" alt="Ideal">
             </div>
           </div>
         </div>
@@ -5309,7 +5319,7 @@
       <div class="cert-grid" id="certGrid">
         <a href="#" class="cert-card" style="--cert-color: linear-gradient(135deg, #f59e0b, #ea580c);">
           <div class="cert-front">
-            <img src="Certificate/Google_Digital_garage_certificate.png" alt="Fundamentals of Digital Marketing" />
+            <img loading="lazy" decoding="async" src="Certificate/Google_Digital_garage_certificate.webp" alt="Fundamentals of Digital Marketing" />
           </div>
           <div class="cert__content">
             <div class="cert__title">Fundamentals of Digital Marketing</div>
@@ -5321,7 +5331,7 @@
 
         <a href="https://www.credly.com/badges/6f9570ed-798f-4201-90d3-99b44fcbc83f/linked_in?t=tlpiup" target="_blank" class="cert-card" style="--cert-color: #00b0f0;">
           <div class="cert-front">
-            <img src="Certificate/PMI KICKOFF.png" alt="PMI KICKOFF Predictive Project Management" />
+            <img loading="lazy" decoding="async" src="Certificate/PMI KICKOFF.webp" alt="PMI KICKOFF Predictive Project Management" />
           </div>
           <div class="cert__content">
             <div class="cert__title">PMI KICKOFF™ — Predictive</div>
@@ -5738,39 +5748,53 @@
     // ===== REVEAL =====
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
 
+    // Layout values are cached and only re-measured on resize/load,
+    // so the scroll handler never forces a synchronous layout.
+    let sectionTops = [], docHeight = 1, lastActive = null;
+    function measureLayout() {
+      sectionTops = Array.from(sections).map(s => ({ id: s.id, top: s.offsetTop }));
+      docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    }
+    measureLayout();
+    window.addEventListener('resize', measureLayout, { passive: true });
+    window.addEventListener('load', measureLayout);
+
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
           // Progress
-          progressBar.style.transform = `scaleX(${scrollTop / docHeight})`;
+          progressBar.style.transform = `scaleX(${Math.min(1, scrollTop / docHeight)})`;
           // Navbar
           navbar.classList.toggle('scrolled', scrollTop > 50);
           // Back to top
           backToTop.classList.toggle('visible', scrollTop > 500);
           // Active nav
           let current = '';
-          sections.forEach(s => { if (scrollTop >= s.offsetTop - 130) current = s.id; });
-          navLinksAll.forEach(a => {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-          });
-          // Reveal
-          const wh = window.innerHeight;
-          revealElements.forEach(el => {
-            if (el.getBoundingClientRect().top < wh - 50) el.classList.add('active');
-          });
+          sectionTops.forEach(s => { if (scrollTop >= s.top - 130) current = s.id; });
+          if (current !== lastActive) {
+            lastActive = current;
+            navLinksAll.forEach(a => {
+              a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+            });
+          }
           ticking = false;
         });
         ticking = true;
       }
-    });
+    }, { passive: true });
 
-    // Initial reveal
-    revealElements.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
-    });
+    // Reveal (observer instead of measuring every element on each scroll frame)
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting || entry.boundingClientRect.top < 0) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
 
     // ===== COUNTER =====
     const counterObserver = new IntersectionObserver(entries => {
@@ -6184,7 +6208,10 @@
     gsap.ticker.add(() => {
       imgX += (mouseX - imgX) * 0.12;
       imgY += (mouseY - imgY) * 0.12;
-      gsap.set(cursorImgContainer, { x: imgX, y: imgY });
+      // Only touch the DOM while the preview image is actually shown
+      if (cursorImgContainer.classList.contains('active')) {
+        gsap.set(cursorImgContainer, { x: imgX, y: imgY });
+      }
     });
     
     expRows.forEach(row => {
@@ -6272,9 +6299,12 @@
       });
     });
 
+    // quickTo reuses one tween instead of creating a new tween every frame
+    const cImgX = cImg ? gsap.quickTo(cImg, "x", { duration: 0.65, ease: "power3.out" }) : null;
+    const cImgY = cImg ? gsap.quickTo(cImg, "y", { duration: 0.65, ease: "power3.out" }) : null;
     gsap.ticker.add(() => {
       if(cImg && cImg.classList.contains('active')) {
-        gsap.to(cImg, { x: cX, y: cY, duration: 0.65, ease: "power3.out" });
+        cImgX(cX); cImgY(cY);
       }
     });
 
@@ -6291,7 +6321,7 @@
         badge: "FIGURE 02 // CCTV SURVEILLANCE VISION",
         title: "TEALD-X Temporal Face Detect",
         sub: "Degradation-Aware Multi-Expert Temporal Framework for Low-Quality Feeds",
-        img: "paper/face detection.jpg",
+        img: "paper/face detection.webp",
         metric: "Temporal Quality-Weighted Fusion",
         status: "Manuscript Prep"
       }
@@ -6349,14 +6379,14 @@
 
     // ===== POLAROID CAROUSEL ENGINE =====
     const plSlides = [
-      { img: "awards%20image/ambassador.jpg", title: "Best Campus Ambassador", desc: "Ranked #1 out of 50+ ambassadors at CareTutors." },
-      { img: "awards%20image/East%20West-medhalalon.png", title: "Medha Lalon Scholarship", desc: "Merit-based scholarship for academic excellence at EWU." },
-      { img: "awards%20image/govt%20scholarships.jpg", title: "Govt Scholarship", desc: "JSC & SSC Government Scholarship Recipient." },
-      { img: "awards%20image/rubics%20cube.jpeg", title: "1st Place - Rubik's Cube", desc: "Champion in speedcubing tournament at EWU Engineering Club." },
-      { img: "awards%20image/Pi%20digit.jpeg", title: "1st Place - Pi Memorization", desc: "Memorized and recited the highest number of Pi digits." },
-      { img: "awards%20image/iq.jpeg", title: "2nd Place - IQ & Analytical", desc: "Runner-up in university-wide analytical skills contest." },
-      { img: "awards%20image/ad%20making.png", title: "2nd Place - Ad Making", desc: "Runner-up at Rajuk Uttara Model College and St. Joseph." },
-      { img: "awards%20image/handwriting.png", title: "Handwriting Winner", desc: "Multiple Handwriting Competition Winner." }
+      { img: "awards%20image/ambassador.webp", title: "Best Campus Ambassador", desc: "Ranked #1 out of 50+ ambassadors at CareTutors." },
+      { img: "awards%20image/East%20West-medhalalon.webp", title: "Medha Lalon Scholarship", desc: "Merit-based scholarship for academic excellence at EWU." },
+      { img: "awards%20image/govt%20scholarships.webp", title: "Govt Scholarship", desc: "JSC & SSC Government Scholarship Recipient." },
+      { img: "awards%20image/rubics%20cube.webp", title: "1st Place - Rubik's Cube", desc: "Champion in speedcubing tournament at EWU Engineering Club." },
+      { img: "awards%20image/Pi%20digit.webp", title: "1st Place - Pi Memorization", desc: "Memorized and recited the highest number of Pi digits." },
+      { img: "awards%20image/iq.webp", title: "2nd Place - IQ & Analytical", desc: "Runner-up in university-wide analytical skills contest." },
+      { img: "awards%20image/ad%20making.webp", title: "2nd Place - Ad Making", desc: "Runner-up at Rajuk Uttara Model College and St. Joseph." },
+      { img: "awards%20image/handwriting.webp", title: "Handwriting Winner", desc: "Multiple Handwriting Competition Winner." }
     ];
 
     const plRoot = document.getElementById('pl-root');
@@ -6379,7 +6409,7 @@
         plState.a.push(0); plState.w.push(0);
         let el = document.createElement('div');
         el.className = 'pl-card'; el.setAttribute('data-i', i);
-        el.innerHTML = '<div class="pl-print"><div class="pl-shot"><img src="' + s.img + '" draggable="false" /></div><div class="pl-note">' + s.title + '</div></div><div class="pl-peg"></div>';
+        el.innerHTML = '<div class="pl-print"><div class="pl-shot"><img loading="lazy" decoding="async" src="' + s.img + '" draggable="false" /></div><div class="pl-note">' + s.title + '</div></div><div class="pl-peg"></div>';
         el.onclick = () => { plState.target = i * plSpacing; };
         plCardsWrapper.appendChild(el);
       });
@@ -6404,12 +6434,22 @@
     };
 
     let prevT = performance.now();
-    function plEngine(now) {
+    let plVisible = false, plRunning = false, plCards = [];
+    function plMeasure() {
       if(!plRoot) return;
-      let r = plRoot.getBoundingClientRect();
-      plSize.w = r.width; plSize.h = r.height;
+      plSize.w = plRoot.offsetWidth; plSize.h = plRoot.offsetHeight;
       plSize.cw = window.innerWidth < 768 ? 220 : 280;
       plSpacing = plSize.cw * 1.08;
+    }
+    // Only animate while the carousel is on screen and the tab is visible
+    function plStart() {
+      if(plRunning || !plVisible || document.hidden) return;
+      plRunning = true; prevT = performance.now();
+      requestAnimationFrame(plEngine);
+    }
+    function plEngine(now) {
+      if(!plRoot) return;
+      if(!plVisible || document.hidden) { plRunning = false; return; }
 
       let dt = Math.min(0.033, (now - prevT) / 1000);
       prevT = now;
@@ -6438,7 +6478,7 @@
         updatePlDOM(near);
       }
 
-      const cards = document.querySelectorAll('.pl-card');
+      const cards = plCards;
       for(let i=0; i<plState.n; i++) {
         let el = cards[i]; if(!el) continue;
         let x = plSize.w / 2 + i * plSpacing - plState.off;
@@ -6460,7 +6500,14 @@
     }
     if(plRoot) {
       updatePlDOM(0);
-      requestAnimationFrame(plEngine);
+      plCards = Array.from(document.querySelectorAll('.pl-card'));
+      plMeasure();
+      window.addEventListener('resize', plMeasure, { passive: true });
+      new IntersectionObserver(entries => {
+        plVisible = entries[0].isIntersecting;
+        if(plVisible) { plMeasure(); plStart(); }
+      }, { rootMargin: '100px 0px' }).observe(plRoot);
+      document.addEventListener('visibilitychange', plStart);
 
       plRoot.addEventListener('pointerdown', e => {
         if(e.target.closest('.pl-btn')) return;
@@ -6663,8 +6710,14 @@
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
 
+      // Skip the ambient mesh on phones/tablets and for reduced-motion users
+      const isSmallOrTouch = window.matchMedia('(max-width: 900px), (hover: none)').matches;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (isSmallOrTouch || reduceMotion) { canvas.style.display = 'none'; return; }
+
       let width = 0, height = 0;
-      let dpr = window.devicePixelRatio || 1;
+      // Soft background dots don't need retina resolution; capping DPR cuts fill cost a lot
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
       let mouse = { x: -1000, y: -1000 };
 
       function resize() {
@@ -6672,14 +6725,20 @@
         height = window.innerHeight;
         canvas.width = width * dpr;
         canvas.height = height * dpr;
-        ctx.scale(dpr, dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
-      window.addEventListener('resize', resize);
+      window.addEventListener('resize', resize, { passive: true });
       resize();
 
       window.addEventListener('mousemove', (e) => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
+      }, { passive: true });
+
+      let meshRunning = true;
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) { meshRunning = false; }
+        else if (!meshRunning) { meshRunning = true; requestAnimationFrame(drawMesh); }
       });
 
       const particleCount = Math.min(48, Math.max(25, Math.floor((width * height) / 32000)));
@@ -6695,6 +6754,7 @@
       }
 
       function drawMesh() {
+        if (!meshRunning) return;
         ctx.clearRect(0, 0, width, height);
 
         for (let i = 0; i < particles.length; i++) {
